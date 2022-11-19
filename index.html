@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/css.css" >
+</head>
+<body>
+    <div class="container">
+        <div class="window">
+            <input type="text" class="input" id="wind2">
+            <input type="text" id="wind">
+        </div>
+        <div class="all_button">
+            <div class="row">
+                <button class="button" >%</button>
+                <button class="button i">CE</button>
+                <button class="button i" id="clear" onclick="clear_input(this,wind,wind2)"  >C</button>
+                <button class="button i">⌫</button>
+            </div>
+            <div class="row">
+                <button class="button">1/x</button>
+                <button class="button i">Х²</button>
+                <button class="button i">&#8730;</button>
+                <button class="button i">&#247;</button>
+            </div>
+            <div class="row">
+                <button class="button c" id="p7" onclick="get(this,wind)" value="7">7</button>
+                <button class="button i c" id="p8" onclick="get(this,wind)" value="8">8</button>
+                <button class="button i c" id="p9" onclick="get(this,wind)" value="9">9</button>
+                <button class="button i">&#215;</button>
+            </div>
+            <div class="row">
+                <button class="button c" id="p4" onclick="get(this,wind)" value="4">4</button>
+                <button class="button i c" id="p5" onclick="get(this,wind)" value="5">5</button>
+                <button class="button i c" id="p6" onclick="get(this,wind)" value="6">6</button>
+                <button class="button i">-</button>
+            </div>
+            <div class="row">
+                <button class="button c" id="p1" onclick="get(this,wind)" value="1">1</button>
+                <button class="button i c" id="p2" onclick="get(this,wind)" value="2">2</button>
+                <button class="button i c" id="p3" onclick="get(this,wind)" value="3">3</button>
+                <button class="button i" id="summ" onclick="summ(this,wind,wind2)" value="+" >+</button>
+            </div>
+            <div class="last">
+                <button class="button">&#177;</button>
+                <button class="button i c" id="p0" onclick="get(this,wind)" value="0">0</button>
+                <button class="button i">,</button>
+                <button class="button i" id="total" onclick="total(this,wind,wind2)" value="=">=</button>
+            </div>
+        </div>
+    </div>
+<script src="js/calculator.js"></script>
+</body>
+</html>
