@@ -1,39 +1,100 @@
-    let a = 0
-    let operation = ''
-    let last = ''
-    let now = ''
+let first  = ''
+let second = ''
+let operation = ''
+let finish = false
+wind1 = document.getElementById('wind')
 
-    function get(button,wind){
-        if(a===1){
-            wind.value =''
-            wind.value  = wind.value +  button.value
-            a=0
-        }else{
-            wind.value  = wind.value +  button.value
-        }
-
-
-    }
-
-    function summ(button,wind,wind2){
-        last = wind.value
-        wind2.value = button.value + wind.value
-        a = 1
-        operation = '+'
-        console.log(wind2.value)
-    }
-
-    function clear_input(button,wind,wind2){
-        wind2.value = ''
-        wind.value = ''
-        a = 0
+    function cleara(){
+        wind1.textContent =''
+        first = ''
+        finish = ''
         operation = ''
     }
+    function clearlast(){
+        wind1.textContent = wind1.textContent.slice(0,-1)
+    }
+    function get(button){
+        if(finish===true){
+            finish = false
+            wind1.textContent =''
+            wind1.textContent = wind1.textContent + button.value
+        }else{
+            wind1.textContent = wind1.textContent + button.value
+        }
 
-    function total(button,wind,wind2){
+    }
+    function operat(button){
+        // if( wind1.textContent.indexOf(operation) === true ) { // находим подстроку
+        //     return
+        // }
+        if(operation!==''){
+            second = wind1.textContent.replace(first,'')
+            second = second.replace(operation,'')
+            second =Number(second)
+            if(operation ==='+'){
+                wind1.textContent = first + second
+                first = first + second
+            }
+            if(operation ==='-'){
+                wind1.textContent = first - second
+                first = first - second
+            }
+            if(operation === '*'){
+                wind1.textContent = first * second
+                first = first * second
+            }
+            if(operation ==='/'){
+                wind1.textContent = first / second
+                first = first / second
+            }
+            wind1.textContent = wind1.textContent + button.value
+            operation = button.value
+        }else{
+            first = Number(wind1.textContent)
+            wind1.textContent = wind1.textContent +  button.value
+            operation = button.value
+        }
+
+    }
+    function total(){
+        second = wind1.textContent.replace(first,'')
+        second = second.replace(operation,'')
+        second =Number(second)
+
         if(operation ==='+'){
-            last = Number(last)
-            now = Number(wind.value)
-            wind2.value = last + now
+            wind1.textContent = first + second
+        }
+        if(operation ==='-'){
+            wind1.textContent = first - second
+        }
+        if(operation === '*'){
+            wind1.textContent = first * second
+        }
+        if(operation ==='/'){
+            wind1.textContent = first / second
+        }
+        first  = ''
+        second = ''
+        operation = ''
+        finish = true
+    }
+    function operat2(button){
+
+        first = Number(wind1.textContent)
+        if(button.value === '^'){
+            wind1.textContent = first**2
+        }
+        if(button.value === '1/x'){
+            wind1.textContent = 1/first
+        }
+        if(button.value === '2'){
+            wind1.textContent = Math.sqrt(first)
+        }
+        if(button.value === '%'){
+            wind1.textContent = first/100
+        }
+        if(button.value === '+/-'){
+            wind1.textContent = first *(-1)
         }
     }
+
