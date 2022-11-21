@@ -54,9 +54,7 @@ body{
     font-size: 35px;
     color: whitesmoke;
     margin-bottom: 10px;
-}
-.input p{
-    height: 40px;
+    text-align: right;
 }
 .change_theme{
     position: absolute;

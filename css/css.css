@@ -48,12 +48,8 @@ p{
     height: 40px;
     border: none;
     font-size: 35px;
-
+    text-align: right;
     margin-bottom: 10px;
-}
-.input p{
-    height: 40px;
-
 }
 .change_theme{
     position: absolute;
